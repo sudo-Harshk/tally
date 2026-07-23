@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-surface: #ffffff;
+  --color-button: #f8fafc;
+  --color-button-hover: #e2e8f0;
+  --color-border: #e2e8f0;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-focus: #2563eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-surface: #0f172a;
+    --color-button: #334155;
+    --color-button-hover: #475569;
+    --color-border: #334155;
+    --color-text: #f8fafc;
+    --color-text-secondary: #94a3b8;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  width: 280px;
+  max-width: 280px;
+  min-width: 260px;
+  min-height: 240px;
+  max-height: 320px;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: "Geist Mono", monospace;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 150ms ease-out;
+}
