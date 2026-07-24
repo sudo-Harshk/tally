@@ -37,10 +37,26 @@
 ### UI
 
 - [ ] Popup has no layout shifts
-- [ ] Dark theme works correctly
-- [ ] Light theme works correctly
+- [ ] Card is visually distinct from container background
 - [ ] Buttons have proper hover states
 - [ ] Smooth transitions on interactions
+- [ ] Loading state shows pulsing text
+
+### Theme Toggle
+
+- [ ] Toggle cycles: System → Light → Dark → System
+- [ ] System theme follows OS preference
+- [ ] Light theme applies white card on light container
+- [ ] Dark theme applies dark card on darker container
+- [ ] Theme persists after popup close and reopen
+- [ ] Theme toggle icon matches current state (Monitor/Sun/Moon)
+- [ ] No flash of wrong theme on popup open
+
+### Accessibility
+
+- [ ] `prefers-reduced-motion: reduce` disables animations
+- [ ] All buttons have `aria-label`
+- [ ] Focus visible ring appears on keyboard navigation
 
 ### Error Handling
 

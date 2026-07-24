@@ -33,3 +33,27 @@
 **Alternatives:** Allow negative values
 
 **Status:** Accepted
+
+---
+
+## 2026-07-24
+
+**Decision:** Use class-based theming (`:root.dark`) instead of `@media (prefers-color-scheme: dark)`
+
+**Reason:** User preference toggle requires runtime control via JavaScript. Media queries are read-only and cannot be overridden per-session.
+
+**Alternatives:** `prefers-color-scheme` media query, inline `data-theme` attribute
+
+**Status:** Accepted
+
+---
+
+## 2026-07-24
+
+**Decision:** Store settings in a separate storage key from counter data
+
+**Reason:** Settings and counter are independent concerns with different lifecycles. Coupling them would require migrating both schemas on any change to either.
+
+**Alternatives:** Merge into `CounterData`, use `chrome.storage.sync`
+
+**Status:** Accepted

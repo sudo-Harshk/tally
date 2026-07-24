@@ -2,6 +2,8 @@
 
 ## Data Flow
 
+### Counter
+
 ```
 Popup
    ↓
@@ -18,14 +20,31 @@ badge.service.ts
 UI re-renders
 ```
 
+### Settings (Theme)
+
+```
+useSettings()
+   ↓
+settings.service.ts
+   ↓
+lib/chrome.ts
+   ↓
+chrome.storage.local
+   ↓
+useSettings applies .dark class on <html>
+```
+
 ## Key Principles
 
 - Components never write directly to storage or update the badge
 - All Chrome API calls go through `lib/chrome.ts`
 - Business logic lives in services
 - UI components are presentational where possible
+- `useSettings` owns all DOM-level theme class application
 
 ## Storage Schema
+
+### CounterData
 
 ```typescript
 interface CounterData {
@@ -33,6 +52,15 @@ interface CounterData {
   count: number;
   createdAt: number;
   updatedAt: number;
+}
+```
+
+### SettingsData
+
+```typescript
+interface SettingsData {
+  version: 1;
+  theme: "light" | "dark" | "system";
 }
 ```
 
@@ -44,6 +72,6 @@ Never modify an existing schema in place. Introduce a new version and migrate fo
 
 | Failure | Behavior |
 |---------|----------|
-| Storage read fails | Initialize default counter |
+| Storage read fails | Initialize default counter / settings |
 | Storage write fails | Show error message, keep previous value |
 | Badge update fails | Don't block counter update |

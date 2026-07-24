@@ -35,7 +35,8 @@
 :root {
   --color-primary: #2563eb;
   --color-primary-hover: #1d4ed8;
-  --color-surface: #ffffff;
+  --color-surface: #f8fafc;
+  --color-card: #ffffff;
   --color-button: #f8fafc;
   --color-button-hover: #e2e8f0;
   --color-border: #e2e8f0;
@@ -44,17 +45,17 @@
   --color-focus: #2563eb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: #3b82f6;
-    --color-primary-hover: #2563eb;
-    --color-surface: #0f172a;
-    --color-button: #334155;
-    --color-button-hover: #475569;
-    --color-border: #334155;
-    --color-text: #f8fafc;
-    --color-text-secondary: #94a3b8;
-  }
+:root.dark {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-surface: #020617;
+  --color-card: #0f172a;
+  --color-button: #334155;
+  --color-button-hover: #475569;
+  --color-border: #334155;
+  --color-text: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-focus: #3b82f6;
 }
 
 * {
@@ -94,6 +95,15 @@ input {
   font-family: "Geist Mono", monospace;
 }
 
+.card {
+  background-color: var(--color-card);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
 @keyframes pulse {
   0% {
     opacity: 0.9;
@@ -110,4 +120,28 @@ input {
 
 .animate-pulse {
   animation: pulse 150ms ease-out;
+}
+
+@keyframes loading-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loading-text {
+  animation: loading-pulse 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

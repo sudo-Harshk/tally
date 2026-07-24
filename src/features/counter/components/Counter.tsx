@@ -74,7 +74,7 @@ export function Counter({ count, onSetCount }: CounterProps) {
   return (
     <button
       onClick={() => setEditing(true)}
-      className={`w-full cursor-pointer bg-transparent text-center text-[60px] font-bold leading-none transition-opacity hover:opacity-80 ${
+      className={`w-full cursor-pointer bg-transparent text-center text-[60px] font-bold leading-none transition-all duration-150 hover:opacity-80 ${
         isAnimating ? "animate-pulse" : ""
       }`}
       style={{

@@ -7,8 +7,9 @@ The fastest, simplest counter for Chrome.
 - One-click increment and decrement
 - Toolbar badge showing current count
 - Persistent storage across browser restarts
-- Light and dark themes
-- Smooth, responsive UI
+- Theme toggle (System / Light / Dark)
+- Smooth, responsive UI with card layout
+- Accessibility: reduced motion support
 
 ## Tech Stack
 
@@ -47,7 +48,8 @@ npm run build
 tally-extension/
 ├── public/
 │   ├── manifest.json
-│   └── icons/
+│   ├── icons/
+│   └── fonts/
 ├── src/
 │   ├── background/
 │   │   └── service-worker.ts
@@ -60,19 +62,24 @@ tally-extension/
 │   │       ├── Popup.tsx
 │   │       ├── components/
 │   │       │   ├── Counter.tsx
-│   │       │   └── Controls.tsx
+│   │       │   ├── Controls.tsx
+│   │       │   └── ThemeToggle.tsx
 │   │       ├── hooks/
-│   │       │   └── useCounter.ts
+│   │       │   ├── useCounter.ts
+│   │       │   └── useSettings.ts
 │   │       └── index.ts
 │   ├── lib/
 │   │   └── chrome.ts
 │   ├── services/
 │   │   ├── counter.service.ts
+│   │   ├── settings.service.ts
 │   │   └── badge.service.ts
 │   ├── types/
-│   │   └── counter.ts
+│   │   ├── counter.ts
+│   │   └── settings.ts
 │   ├── utils/
 │   │   └── date.ts
+│   ├── index.css
 │   └── main.tsx
 ├── docs/
 ├── tests/
