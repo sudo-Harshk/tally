@@ -34,6 +34,22 @@ chrome.storage.local
 useSettings applies .dark class on <html>
 ```
 
+### Named Commands (Service Worker)
+
+```
+chrome.commands.onCommand
+   ↓
+service-worker.ts
+   ↓
+counter.service.ts (increment/decrement/reset)
+   ↓
+chrome.storage.local
+   ↓
+chrome.storage.onChanged fires
+   ↓
+useCounter() updates popup state
+```
+
 ## Key Principles
 
 - Components never write directly to storage or update the badge

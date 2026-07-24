@@ -14,7 +14,7 @@
 
 ## v1.2.0
 
-- Advanced keyboard shortcuts
+- Advanced keyboard shortcuts (named commands: Ctrl+Shift+↑/↓/X)
 
 ## v2.0.0
 

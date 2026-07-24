@@ -64,7 +64,7 @@
 - [ ] Error message shown if storage fails
 - [ ] Previous value kept if write fails
 
-### Keyboard Shortcuts
+### Keyboard Shortcuts (Popup)
 
 - [ ] ArrowUp increments counter
 - [ ] ArrowDown decrements counter
@@ -74,3 +74,14 @@
 - [ ] ArrowUp does NOT fire when counter is in edit mode (input focused)
 - [ ] Shortcuts still work after clicking a button (button focus, not input)
 - [ ] Hovering buttons shows tooltip with shortcut key
+
+### Named Commands
+
+- [ ] Ctrl+Shift+Up increments counter (Chrome focused, popup closed)
+- [ ] Ctrl+Shift+Down decrements counter (Chrome focused, popup closed)
+- [ ] Ctrl+Shift+X resets counter (Chrome focused, popup closed)
+- [ ] Ctrl+Shift+Up increments counter (popup open, no staleness)
+- [ ] Ctrl+Shift+Down decrements counter (popup open, no staleness)
+- [ ] Ctrl+Shift+X resets counter (popup open, no staleness)
+- [ ] chrome://extensions/shortcuts shows 3 commands bound
+- [ ] Service worker shows "Active" in chrome://extensions

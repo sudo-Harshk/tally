@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import type { CounterData } from "@/types/counter";
+import { STORAGE_KEYS } from "@/constants/storage";
 import * as counter from "@/services/counter.service";
 
 export function useCounter() {
@@ -13,6 +14,23 @@ export function useCounter() {
       .then(setData)
       .catch((err) => setError(String(err)))
       .finally(() => setLoading(false));
+  }, []);
+
+  useEffect(() => {
+    function handleStorageChange(
+      changes: { [key: string]: chrome.storage.StorageChange },
+      areaName: string,
+    ) {
+      if (areaName === "local") {
+        const change = changes[STORAGE_KEYS.COUNTER];
+        if (change) {
+          setData(change.newValue as CounterData);
+        }
+      }
+    }
+
+    chrome.storage.onChanged.addListener(handleStorageChange);
+    return () => chrome.storage.onChanged.removeListener(handleStorageChange);
   }, []);
 
   const handleUpdate = useCallback(

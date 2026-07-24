@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0] - 2026-07-24
+
+### Added
+
+- Named keyboard commands: Ctrl+Shift+Up/Down/X (increment/decrement/reset)
+- Service worker command handler via chrome.commands API
+- Live popup updates via chrome.storage.onChanged listener
+- ES module service worker (`"type": "module"` in manifest)
+
 ## [1.1.0] - 2026-07-24
 
 ### Added

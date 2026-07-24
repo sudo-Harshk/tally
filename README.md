@@ -5,6 +5,7 @@ The fastest, simplest counter for Chrome.
 ## Features
 
 - One-click increment and decrement
+- Keyboard shortcuts: Arrow keys (popup) + Ctrl+Shift+Up/Down/X (global)
 - Toolbar badge showing current count
 - Persistent storage across browser restarts
 - Theme toggle (System / Light / Dark)
@@ -49,7 +50,8 @@ tally-extension/
 ├── public/
 │   ├── manifest.json
 │   ├── icons/
-│   └── fonts/
+│   ├── fonts/
+│   └── theme-seed.js
 ├── src/
 │   ├── background/
 │   │   └── service-worker.ts
@@ -64,9 +66,10 @@ tally-extension/
 │   │       │   ├── Counter.tsx
 │   │       │   ├── Controls.tsx
 │   │       │   └── ThemeToggle.tsx
-│   │       ├── hooks/
-│   │       │   ├── useCounter.ts
-│   │       │   └── useSettings.ts
+│       │   ├── hooks/
+│       │   │   ├── useCounter.ts
+│       │   │   ├── useSettings.ts
+│       │   │   └── useKeyboardShortcuts.ts
 │   │       └── index.ts
 │   ├── lib/
 │   │   └── chrome.ts
