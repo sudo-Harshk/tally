@@ -10,7 +10,7 @@
 ## v1.1.0
 
 - UI improvements ✅
-- Keyboard shortcuts
+- Keyboard shortcuts ✅
 
 ## v1.2.0
 

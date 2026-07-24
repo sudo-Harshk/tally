@@ -63,3 +63,14 @@
 - [ ] No console errors during normal use
 - [ ] Error message shown if storage fails
 - [ ] Previous value kept if write fails
+
+### Keyboard Shortcuts
+
+- [ ] ArrowUp increments counter
+- [ ] ArrowDown decrements counter
+- [ ] R resets counter to 0
+- [ ] Shift+R / Caps Lock R still triggers reset (case-insensitive)
+- [ ] Ctrl+R / Cmd+R does NOT trigger reset (browser refresh)
+- [ ] ArrowUp does NOT fire when counter is in edit mode (input focused)
+- [ ] Shortcuts still work after clicking a button (button focus, not input)
+- [ ] Hovering buttons shows tooltip with shortcut key

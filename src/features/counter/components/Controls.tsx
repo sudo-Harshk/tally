@@ -17,6 +17,7 @@ export function Controls({ onIncrement, onDecrement, onReset }: ControlsProps) {
           color: "var(--color-text)",
         }}
         aria-label="Decrement"
+        title="Decrement (↓)"
       >
         <Minus size={22} strokeWidth={2.5} />
       </button>
@@ -29,6 +30,7 @@ export function Controls({ onIncrement, onDecrement, onReset }: ControlsProps) {
           backgroundColor: "transparent",
         }}
         aria-label="Reset"
+        title="Reset (R)"
       >
         <RotateCcw size={18} strokeWidth={2} />
       </button>
@@ -40,6 +42,7 @@ export function Controls({ onIncrement, onDecrement, onReset }: ControlsProps) {
           backgroundColor: "var(--color-primary)",
         }}
         aria-label="Increment"
+        title="Increment (↑)"
       >
         <Plus size={22} strokeWidth={2.5} />
       </button>

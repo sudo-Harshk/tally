@@ -1,5 +1,6 @@
 import { useCounter } from "./hooks/useCounter";
 import { useSettings } from "./hooks/useSettings";
+import { useKeyboardShortcuts } from "./hooks/useKeyboardShortcuts";
 import { Counter } from "./components/Counter";
 import { Controls } from "./components/Controls";
 import { ThemeToggle } from "./components/ThemeToggle";
@@ -7,6 +8,8 @@ import { ThemeToggle } from "./components/ThemeToggle";
 export default function Popup() {
   const { count, loading, error, increment, decrement, reset, setCount } = useCounter();
   const { theme, setTheme } = useSettings();
+
+  useKeyboardShortcuts({ onIncrement: increment, onDecrement: decrement, onReset: reset });
 
   if (loading) {
     return (
