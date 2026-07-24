@@ -4,24 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tally</title>
-    <script>
-      (function () {
-        try {
-          var t = JSON.parse(localStorage.getItem("settings") || "{}").theme;
-          if (
-            t === "dark" ||
-            (t !== "light" &&
-              matchMedia("(prefers-color-scheme: dark)").matches)
-          ) {
-            document.documentElement.classList.add("dark");
-          }
-        } catch (e) {
-          if (matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.documentElement.classList.add("dark");
-          }
-        }
-      })();
-    </script>
+    <script src="/theme-seed.js"></script>
   </head>
   <body>
     <div id="root"></div>
